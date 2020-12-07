@@ -13,6 +13,31 @@ export default createSchema({
   types: schemaTypes.concat([
     /* Your types here! */
     {
+      name: 'projectImages',
+      type: 'image',
+      options: {
+        isHighlighted: true
+      },
+      fields: [
+        {
+          name: 'caption_lt',
+          type: 'string',
+          title: 'Title (LT)',
+          options: {
+            isHighlighted: true
+          }
+        },
+        {
+          name: 'caption_en',
+          type: 'string',
+          title: 'Title (EN)',
+          options: {
+            isHighlighted: true
+          }
+        }
+      ]
+    },
+    {
       title: 'Site Settings',
       name: 'siteSettings',
       type: 'document',
@@ -33,6 +58,16 @@ export default createSchema({
           name: 'about_en',
           type: 'array', 
           of: [{type: 'block'}]
+        },
+        {
+          title: 'Icon (must be 32x32px) png',
+          name: 'icon',
+          type: 'image'
+        },
+        {
+          title: 'Metatag banner',
+          name: 'meta_image',
+          type: 'image'
         }
       ]
     },
@@ -69,6 +104,16 @@ export default createSchema({
           title: 'Project name (EN)'
         },
         {
+          name: 'about_lt',
+          type: 'string',
+          title: 'About (LT) up to 200-300 characters'
+        },
+        {
+          name: 'about_en',
+          type: 'string',
+          title: 'About (EN) up to 200-300 characters'
+        },
+        {
           name: 'category',
           type: 'reference',
           title: 'Category name',
@@ -78,30 +123,7 @@ export default createSchema({
           title: 'Images',
           name: 'images',
           type: 'array',
-          of: [{
-            type: 'image',
-            options: {
-              isHighlighted: true
-            },
-            fields: [
-              {
-                name: 'caption_lt',
-                type: 'string',
-                title: 'Title (LT)',
-                options: {
-                  isHighlighted: true
-                }
-              },
-              {
-                name: 'caption_en',
-                type: 'string',
-                title: 'Title (EN)',
-                options: {
-                  isHighlighted: true
-                }
-              }
-            ]
-          }]
+          of: [{ type: 'projectImages' }, { type: 'image' }]
         }
       ]
     }
