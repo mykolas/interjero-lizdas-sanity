@@ -123,7 +123,7 @@ export default createSchema({
           title: 'Images',
           name: 'images',
           type: 'array',
-          of: [{ type: 'projectImages' }, { type: 'image' }]
+          of: [{ type: 'projectImages' }]
         }
       ]
     }
