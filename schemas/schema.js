@@ -60,6 +60,18 @@ export default createSchema({
           of: [{type: 'block'}]
         },
         {
+          title: 'Paslaugos ir kainos (LT)',
+          name: 'services_pricing_lt',
+          type: 'array', 
+          of: [{type: 'block'}]
+        },
+        {
+          title: 'Services and pricing (EN)',
+          name: 'services_pricing_en',
+          type: 'array', 
+          of: [{type: 'block'}]
+        },
+        {
           title: 'Icon (must be 32x32px) png',
           name: 'icon',
           type: 'image'
